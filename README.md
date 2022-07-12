@@ -22,3 +22,7 @@
 - Redux
 
 - API : firebase console
+
+
+## 참조 글
+ - [TypeScript-React : React.FC 사용 줄이기](https://woobiblog.com/Javascript/Typescript_FunctionComponent_FC_%EC%82%AC%EC%9A%A9_%EC%A4%84%EC%9D%B4%EA%B8%B0)
