@@ -33,7 +33,11 @@
       }
     ],
     "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
-    "react-hooks/rules-of-hooks": "error", //
+    "import/prefer-default-export": "off", // 단일 export 일 때, export default 권고 : off
+    "react/function-component-definition": [2, { "namedComponents": "arrow-function" }], // functional compoenent 정의 시 arrow function 선호
+
+    //React docs : React hooks rules
+    "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn"
   }
 }

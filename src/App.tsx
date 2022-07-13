@@ -1,11 +1,8 @@
 import React from 'react';
+import { Card } from './components/Card';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>react-typescript</h1>
-    </div>
-  );
-}
-
-export default App;
+export const App = () => (
+  <div className="App">
+    <Card />
+  </div>
+);
