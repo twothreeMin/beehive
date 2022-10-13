@@ -20,7 +20,7 @@
     "import/resolver": {
       "typescript": {}
     }
-  },
+  },  
   "plugins": ["react", "react-hooks", "@typescript-eslint"],
   "rules": {
     "max-len": ["warn", { "code": 100 }],
