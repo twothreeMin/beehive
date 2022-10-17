@@ -1,15 +1,10 @@
 import axios, { AxiosResponse } from 'axios';
 import { useEffect, useState } from 'react';
-
-type Consultant = {
-  id : string,
-  name : string,
-  phone : string,
-  position: string
-}
+import { Consultant } from '../../interface/interface';
+import { Card } from '../Card/index';
 
 export function Main() {
-  const [consultants, setConsultants] = useState([]);
+  const [consultants, setConsultants] = useState<Consultant[]>([]);
 
   useEffect(() => {
     async function getConsultants() {
@@ -21,14 +16,19 @@ export function Main() {
         phone: response.data[key].phone,
         position: response.data[key].phone,
       }));
-      console.log(resultData);
+
+      setConsultants(resultData);
     }
     getConsultants();
   }, []);
 
   return (
     <div>
-      <h2>메인 페이지입니다.</h2>
+      {consultants.map((consultant) => (
+        <div key={consultant.id}>
+          <Card consultant={consultant} />
+        </div>
+      ))}
     </div>
   );
 }
