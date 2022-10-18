@@ -29,7 +29,7 @@ export function Customers() {
     <div>
       {customers.map((customer) => (
         <div key={customer.id}>
-          <Card props={customer} />
+          <Card data={customer} />
         </div>
       ))}
     </div>

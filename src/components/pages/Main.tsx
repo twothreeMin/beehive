@@ -26,7 +26,7 @@ export function Main() {
     <div>
       {consultants.map((consultant) => (
         <div key={consultant.id}>
-          <Card consultant={consultant} />
+          <Card data={consultant} />
         </div>
       ))}
     </div>
