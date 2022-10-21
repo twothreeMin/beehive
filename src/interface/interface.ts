@@ -1,3 +1,10 @@
+export interface Project {
+  end_date: string;
+  name: string;
+  ptst_target: number;
+  start_date: string;
+}
+
 export interface Consultant {
   id : string;
   name : string;
@@ -13,10 +20,9 @@ export interface Customer {
   mgrName: string;
   mgrPhone: string;
   mgrPosition: string;
-  project: { // project: 프로젝트 정보
-    end_date: string;
-    name: string;
-    ptst_target: number;
-    start_date: string;
-  };
+  project: Project;
+}
+
+export interface Indexable {
+  [key: string] : string;
 }
