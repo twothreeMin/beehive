@@ -22,7 +22,3 @@ export interface Customer {
   mgrPosition: string;
   project: Project;
 }
-
-export interface Indexable {
-  [key: string] : string;
-}
