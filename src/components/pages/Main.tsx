@@ -1,26 +1,15 @@
-import { useEffect, useState } from 'react';
-import { Consultant } from '../../interface/interface';
-import { RequestManager } from '../../lib/requestApi';
-import { Card } from '../Card/index';
+import { Modal } from '../Modal';
 
 export function Main() {
-  const [consultants, setConsultants] = useState<Consultant[]>([]);
-
-  useEffect(() => {
-    async function getConsultants() {
-      const consultantsArr = await RequestManager.getConsultantsArray();
-      setConsultants(consultantsArr);
-    }
-    getConsultants();
-  }, []);
+  function openModal() {
+    console.log('click!');
+  }
 
   return (
     <div>
-      {consultants.map((consultant) => (
-        <div key={consultant.id}>
-          <Card data={consultant} />
-        </div>
-      ))}
+      <h1>Main</h1>
+      <button type="button" onClick={openModal}>등록(모달창)</button>
+      <Modal />
     </div>
   );
 }
