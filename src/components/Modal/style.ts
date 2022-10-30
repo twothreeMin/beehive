@@ -1,17 +1,25 @@
 import tw from 'tailwind-styled-components';
 
-const ModalContainer = tw.div`
-  modal 
-  fade 
-  fixed 
-  top-0 
-  left-0 
-  hidden 
-  w-full 
-  h-full 
-  outline-none 
-  overflow-x-hidden 
-  overflow-y-auto
+const ModalWrapper = tw.div`
+  fixed
+  inset-x-0
+  top-1/4
+  m-auto
+  max-w-sm
+  bg-white
+  rounded-lg
+  shadow
+  bg-blue-50
 `;
 
-export { ModalContainer };
+const ModalFormWrapper = tw.div`
+  py-6
+  px-6
+  lg:px-8
+`;
+
+const ModalButtonWrapper = tw.div`
+  flex flex-row
+`;
+
+export { ModalWrapper, ModalFormWrapper };
