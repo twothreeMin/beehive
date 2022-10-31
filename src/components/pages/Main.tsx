@@ -1,22 +1,14 @@
-import { useState, useCallback } from 'react';
+import { modalStore } from '../../store/store';
 import { Modal } from '../Modal';
 
 export function Main() {
-  const [openModal, setOpenModal] = useState(false);
-
-  const clickModalButton = useCallback(() => {
-    setOpenModal(true);
-  }, []);
-
-  const clickCloseModal = useCallback(() => {
-    setOpenModal(false);
-  }, []);
+  const { openModal } = modalStore();
 
   return (
     <div>
-      <Modal openModal={openModal} clickCloseModal={clickCloseModal} />
+      <Modal />
       <h1>Main</h1>
-      <button type="button" onClick={clickModalButton}>등록(모달창)</button>
+      <button type="button" onClick={openModal}>등록(모달창)</button>
     </div>
   );
 }

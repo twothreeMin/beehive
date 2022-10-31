@@ -1,21 +1,19 @@
 import ReactDOM from 'react-dom';
 import { ModalWrapper, ModalFormWrapper } from './style';
+import { modalStore } from '../../store/store';
 import { InputForm } from './InputForm';
 import closeButton from '../../assets/close.png';
 
-interface ModalProps {
-  openModal: boolean;
-  clickCloseModal: () => void;
-}
+export function Modal() {
+  const { isOpenModal, closeModal } = modalStore();
 
-export function Modal({ openModal, clickCloseModal }: ModalProps) {
   return (
     <>
       {ReactDOM.createPortal(
-        openModal
+        isOpenModal
         && (
         <ModalWrapper>
-          <button type="button" onClick={clickCloseModal} className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+          <button type="button" id="x-button" onClick={closeModal} className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
             <img src={closeButton} alt="closeButton" className="w-4 h-4" />
           </button>
           <ModalFormWrapper>
