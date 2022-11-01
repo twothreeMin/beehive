@@ -1,15 +1,21 @@
 import create from 'zustand';
-
-interface ModalState {
-  isOpenModal: boolean;
-  openModal: () => void;
-  closeModal: () => void;
-}
+import { ModalState, InputDetectStore } from '../interface/interface';
 
 const modalStore = create<ModalState>((set) => ({
   isOpenModal: false,
-  openModal: () => set((state) => ({ isOpenModal: true })),
-  closeModal: () => set((state) => ({ isOpenModal: false })),
+  openModal: () => set(() => ({ isOpenModal: true })),
+  closeModal: () => set(() => ({ isOpenModal: false })),
 }));
 
-export { modalStore };
+const inputDetectStore = create<InputDetectStore>((set) => ({
+  isDetectCustomerField: false,
+  isDetectConsultantField: false,
+  detectCustomerField: () => set((state) => ({
+    isDetectCustomerField: !state.isDetectCustomerField,
+  })),
+  detectConsultantField: () => set((state) => ({
+    isDetectConsultantField: !state.isDetectConsultantField,
+  })),
+}));
+
+export { modalStore, inputDetectStore };

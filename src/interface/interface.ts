@@ -22,3 +22,16 @@ export interface Customer {
   mgrPosition: string;
   project: Project;
 }
+
+export interface ModalState {
+  isOpenModal: boolean;
+  openModal: () => void;
+  closeModal: () => void;
+}
+
+export interface InputDetectStore {
+  isDetectCustomerField: boolean;
+  isDetectConsultantField: boolean;
+  detectCustomerField: () => void;
+  detectConsultantField: () => void;
+}

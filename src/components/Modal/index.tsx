@@ -1,8 +1,10 @@
 import ReactDOM from 'react-dom';
+import { useEffect } from 'react';
 import { ModalWrapper, ModalFormWrapper } from './style';
 import { modalStore } from '../../store/store';
 import { InputForm } from './InputForm';
 import closeButton from '../../assets/close.png';
+import { RequestManager } from '../../lib/requestApi';
 
 export function Modal() {
   const { isOpenModal, closeModal } = modalStore();
