@@ -19,7 +19,7 @@ const CardWrapper = tw.div`
 `;
 
 const CardLogo = styled.img`
-  ${tw`p-2`}
+  ${tw`p-3`}
 `;
 
 const CardCustomerName = tw.h5`
