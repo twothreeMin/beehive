@@ -16,15 +16,15 @@ const ModalWrapper = styled.div`
       hover:text-gray-900 
     `}
   }
+  
+  & img {
+    ${tw`w-4 h-4`}
+  }
 `;
 
 const ModalFormWrapper = styled.div`
   & {
-    ${tw`
-      py-6
-      px-6
-      lg:px-8
-    `}
+    ${tw`py-6 px-6 lg:px-8`}
   }
 `;
 
