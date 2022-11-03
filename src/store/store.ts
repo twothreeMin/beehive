@@ -1,5 +1,5 @@
 import create from 'zustand';
-import { ModalState, InputDetectStore } from '../interface/interface';
+import { ModalState, InputDetectState } from '../interface/stateInterface';
 
 const modalStore = create<ModalState>((set) => ({
   isOpenModal: false,
@@ -7,7 +7,7 @@ const modalStore = create<ModalState>((set) => ({
   closeModal: () => set(() => ({ isOpenModal: false })),
 }));
 
-const inputDetectStore = create<InputDetectStore>((set) => ({
+const inputDetectStore = create<InputDetectState>((set) => ({
   isDetectCustomerField: false,
   isDetectConsultantField: false,
   detectCustomerField: () => set((state) => ({
