@@ -2,11 +2,11 @@ import styled from '@emotion/styled';
 import tw from 'twin.macro';
 import { ButtonTypeProps } from '../../../interface/styledInterface';
 
-const ModalForm = styled.form`
+const FormWrapper = styled.form`
   ${tw`space-y-6`}
 `;
 
-const ModalInputWrapper = styled.div`
+const InputWrapper = styled.div`
   & label {
     ${tw`block my-8 text-lg font-medium`}
   }
@@ -20,7 +20,7 @@ const ModalInputWrapper = styled.div`
   }
 `;
 
-const ModalButtonWrapper = styled.div`
+const ButtonWrapper = styled.div`
   ${tw`flex flex-row`}
 `;
 
@@ -32,5 +32,5 @@ const Button = styled.button<ButtonTypeProps>`
 `;
 
 export {
-  ModalForm, ModalInputWrapper, ModalButtonWrapper, Button,
+  FormWrapper, InputWrapper, ButtonWrapper, Button,
 };

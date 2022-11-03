@@ -1,9 +1,9 @@
 import { modalStore } from '../../../store/store';
 import {
-  ModalForm, ModalInputWrapper, ModalButtonWrapper, Button,
+  FormWrapper, InputWrapper, ButtonWrapper, Button,
 } from './style';
 
-export function InputForm() {
+export function FormInputs() {
   const { closeModal } = modalStore();
 
   const detectSearching = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -11,23 +11,23 @@ export function InputForm() {
   };
 
   return (
-    <ModalForm>
-      <ModalInputWrapper>
+    <FormWrapper>
+      <InputWrapper>
         <label htmlFor="customer">
           <p>고객사</p>
           <input type="customer" name="customer" id="customer" onChange={detectSearching} required />
         </label>
-      </ModalInputWrapper>
-      <ModalInputWrapper>
+      </InputWrapper>
+      <InputWrapper>
         <label htmlFor="consultants">
           <p>컨설턴트</p>
           <input type="consultants" name="consultants" id="consultants" onChange={detectSearching} required />
         </label>
-      </ModalInputWrapper>
-      <ModalButtonWrapper>
+      </InputWrapper>
+      <ButtonWrapper>
         <Button isPrimary>등록</Button>
         <Button onClick={closeModal}>취소</Button>
-      </ModalButtonWrapper>
-    </ModalForm>
+      </ButtonWrapper>
+    </FormWrapper>
   );
 }
