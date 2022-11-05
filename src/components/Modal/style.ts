@@ -4,7 +4,7 @@ import tw from 'twin.macro';
 const ModalWrapper = styled.div`
   & {
     ${tw`
-      fixed inset-x-0 top-1/4 m-auto max-w-sm bg-white rounded-lg shadow bg-blue-50
+      fixed inset-x-0 top-1/4 m-auto max-w-sm rounded-lg shadow bg-blue-50
     `}
   }
 
@@ -26,6 +26,11 @@ const ModalFormWrapper = styled.div`
   & {
     ${tw`py-6 px-6 lg:px-8`}
   }
+
+  & h3 {
+    ${tw`mb-4 text-xl font-medium text-gray-900`}
+  } 
+
 `;
 
 export { ModalWrapper, ModalFormWrapper };

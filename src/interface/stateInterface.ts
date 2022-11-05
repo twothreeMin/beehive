@@ -5,8 +5,7 @@ export interface ModalState {
 }
 
 export interface InputDetectState {
-  isDetectCustomerField: boolean;
-  isDetectConsultantField: boolean;
-  detectCustomerField: () => void;
-  detectConsultantField: () => void;
+  isDetectInput: boolean;
+  detectInput: () => void;
+  notDetectInput: () => void;
 }

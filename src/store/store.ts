@@ -8,13 +8,12 @@ const modalStore = create<ModalState>((set) => ({
 }));
 
 const inputDetectStore = create<InputDetectState>((set) => ({
-  isDetectCustomerField: false,
-  isDetectConsultantField: false,
-  detectCustomerField: () => set((state) => ({
-    isDetectCustomerField: !state.isDetectCustomerField,
+  isDetectInput: false,
+  detectInput: () => set(() => ({
+    isDetectInput: true,
   })),
-  detectConsultantField: () => set((state) => ({
-    isDetectConsultantField: !state.isDetectConsultantField,
+  notDetectInput: () => set(() => ({
+    isDetectInput: false,
   })),
 }));
 

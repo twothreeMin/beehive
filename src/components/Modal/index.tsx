@@ -17,7 +17,7 @@ export function Modal() {
             <img src={closeButton} alt="closeButton" />
           </button>
           <ModalFormWrapper>
-            <h3 className="mb-4 text-xl font-medium text-gray-900">프로젝트 일정 등록</h3>
+            <h3>프로젝트 일정 등록</h3>
             <FormInputs />
           </ModalFormWrapper>
         </ModalWrapper>

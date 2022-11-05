@@ -1,13 +1,16 @@
-import { modalStore } from '../../../store/store';
+import { modalStore, inputDetectStore } from '../../../store/store';
+import { DropDownItems } from './DropDownItems';
 import {
   FormWrapper, InputWrapper, ButtonWrapper, Button,
 } from './style';
 
 export function FormInputs() {
   const { closeModal } = modalStore();
+  const { isDetectInput, detectInput, notDetectInput } = inputDetectStore();
 
   const detectSearching = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
+    if (e.target.value.length !== 0) detectInput();
+    if (e.target.value.length === 0) notDetectInput();
   };
 
   return (
@@ -16,6 +19,7 @@ export function FormInputs() {
         <label htmlFor="customer">
           <p>고객사</p>
           <input type="customer" name="customer" id="customer" onChange={detectSearching} required />
+          {isDetectInput && <DropDownItems />}
         </label>
       </InputWrapper>
       <InputWrapper>
