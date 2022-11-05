@@ -9,10 +9,10 @@ const modalStore = create<ModalState>((set) => ({
 
 const inputDetectStore = create<InputDetectState>((set) => ({
   isDetectInput: false,
-  detectInput: () => set(() => ({
+  detectInputFiled: () => set(() => ({
     isDetectInput: true,
   })),
-  notDetectInput: () => set(() => ({
+  notDetectInputFiled: () => set(() => ({
     isDetectInput: false,
   })),
 }));

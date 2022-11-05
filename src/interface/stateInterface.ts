@@ -6,6 +6,6 @@ export interface ModalState {
 
 export interface InputDetectState {
   isDetectInput: boolean;
-  detectInput: () => void;
-  notDetectInput: () => void;
+  detectInputFiled: () => void;
+  notDetectInputFiled: () => void;
 }

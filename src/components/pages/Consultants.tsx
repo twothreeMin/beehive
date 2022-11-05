@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Consultant } from '../../interface/interface';
 import { RequestManager } from '../../lib/requestApi';
-import { Card } from '../Card/index';
+import { Card } from '../Card/Card';
 
 export function Consultants() {
   const [consultants, setConsultants] = useState<Consultant[]>([]);
