@@ -4,8 +4,14 @@ export interface ModalState {
   closeModal: () => void;
 }
 
-export interface InputDetectState {
-  isDetectInput: boolean;
-  detectInputFiled: () => void;
-  notDetectInputFiled: () => void;
+export interface InputDetectCstStore {
+  isDetectCst: boolean;
+  detectInputCst: () => void;
+  notDetectInputCst: () => void;
+}
+
+export interface InputDetectCnstStore {
+  isDetectCnst: boolean;
+  detectInputCnst: () => void;
+  notDetectInputCnst: () => void;
 }

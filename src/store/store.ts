@@ -1,5 +1,5 @@
 import create from 'zustand';
-import { ModalState, InputDetectState } from '../interface/stateInterface';
+import { ModalState, InputDetectCstStore, InputDetectCnstStore } from '../interface/stateInterface';
 
 const modalStore = create<ModalState>((set) => ({
   isOpenModal: false,
@@ -7,14 +7,24 @@ const modalStore = create<ModalState>((set) => ({
   closeModal: () => set(() => ({ isOpenModal: false })),
 }));
 
-const inputDetectStore = create<InputDetectState>((set) => ({
-  isDetectInput: false,
-  detectInputFiled: () => set(() => ({
-    isDetectInput: true,
+const inputDetectCstStore = create<InputDetectCstStore>((set) => ({
+  isDetectCst: false,
+  detectInputCst: () => set(() => ({
+    isDetectCst: true,
   })),
-  notDetectInputFiled: () => set(() => ({
-    isDetectInput: false,
+  notDetectInputCst: () => set(() => ({
+    isDetectCst: false,
   })),
 }));
 
-export { modalStore, inputDetectStore };
+const inputDetectCnstStore = create<InputDetectCnstStore>((set) => ({
+  isDetectCnst: false,
+  detectInputCnst: () => set(() => ({
+    isDetectCnst: true,
+  })),
+  notDetectInputCnst: () => set(() => ({
+    isDetectCnst: false,
+  })),
+}));
+
+export { modalStore, inputDetectCstStore, inputDetectCnstStore };
