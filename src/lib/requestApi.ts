@@ -7,18 +7,7 @@ const axiosClient = axios.create({
   headers: { 'Content-type': 'application/json' },
 });
 
-const getConsultantsArray = async () => {
-  const resp = await axiosClient.get('consultants.json');
-  const resultData: Consultant[] = Object.keys(resp.data).map((key: string) => ({
-    id: key,
-    name: resp.data[key].name,
-    phone: resp.data[key].phone,
-    position: resp.data[key].position,
-  }));
-  return resultData;
-};
-
-const getCustomersArray = async () => {
+const getCustomers = async () => {
   const resp = await axiosClient.get('customer.json');
   const resultData: Customer[] = Object.keys(resp.data).map((key: string) => ({
     id: key,
@@ -32,7 +21,18 @@ const getCustomersArray = async () => {
   return resultData;
 };
 
+const getConsultants = async () => {
+  const resp = await axiosClient.get('consultants.json');
+  const resultData: Consultant[] = Object.keys(resp.data).map((key: string) => ({
+    id: key,
+    name: resp.data[key].name,
+    phone: resp.data[key].phone,
+    position: resp.data[key].position,
+  }));
+  return resultData;
+};
+
 export const RequestManager = {
-  getConsultantsArray,
-  getCustomersArray,
+  getConsultants,
+  getCustomers,
 };
