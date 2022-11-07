@@ -8,7 +8,7 @@ export function Customers() {
 
   useEffect(() => {
     async function getCustomers() {
-      const customersArr = await RequestManager.getCustomersArray();
+      const customersArr = await RequestManager.getCustomers();
       setCustomers(customersArr);
     }
     getCustomers();

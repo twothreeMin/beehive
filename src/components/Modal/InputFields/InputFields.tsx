@@ -1,10 +1,14 @@
+import axios from 'axios';
+import React from 'react';
+import { useQuery } from 'react-query';
+import { RequestManager } from '../../../lib/requestApi';
 import { inputDetectCstStore, inputDetectCnstStore } from '../../../store/store';
 import { DropDownItems } from './DropDownItems/DropDownItems';
 import {
   InputWrapper,
 } from './style';
 
-function CstInputField() {
+const CstInputField = React.memo(() => {
   const { isDetectCst, detectInputCst, notDetectInputCst } = inputDetectCstStore();
 
   const detectSearching = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -21,9 +25,9 @@ function CstInputField() {
       </label>
     </InputWrapper>
   );
-}
+});
 
-function CnstInputField() {
+const CnstInputField = React.memo(() => {
   const { isDetectCnst, detectInputCnst, notDetectInputCnst } = inputDetectCnstStore();
 
   const detectSearching = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,15 +38,15 @@ function CnstInputField() {
   return (
     <InputWrapper>
       <label htmlFor="cusomter">
-        <p>고객사</p>
+        <p>컨설턴트</p>
         <input name="customer" id="customer" onChange={detectSearching} required />
         {isDetectCnst && <DropDownItems />}
       </label>
     </InputWrapper>
   );
-}
+});
 
-export function InputForms() {
+export function InputFields() {
   return (
     <>
       <CstInputField />

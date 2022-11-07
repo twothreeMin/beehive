@@ -8,7 +8,7 @@ export function Consultants() {
 
   useEffect(() => {
     async function getConsultants() {
-      const consultantsArr = await RequestManager.getConsultantsArray();
+      const consultantsArr = await RequestManager.getConsultants();
       setConsultants(consultantsArr);
     }
     getConsultants();
