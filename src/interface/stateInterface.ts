@@ -4,14 +4,12 @@ export interface ModalState {
   closeModal: () => void;
 }
 
-export interface InputDetectCstStore {
-  isDetectCst: boolean;
-  detectInputCst: () => void;
-  notDetectInputCst: () => void;
+export interface InputCstState {
+  inputCst: string;
+  setInputCst: (word: string) => void;
 }
 
-export interface InputDetectCnstStore {
-  isDetectCnst: boolean;
-  detectInputCnst: () => void;
-  notDetectInputCnst: () => void;
+export interface InputCnstState {
+  inputCnst: string;
+  setInputCnst: (word: string) => void;
 }

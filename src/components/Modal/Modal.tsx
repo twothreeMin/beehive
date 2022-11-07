@@ -1,13 +1,25 @@
 import ReactDOM from 'react-dom';
+import { useEffect } from 'react';
 import {
   ModalWrapper, ModalFormWrapper, ButtonWrapper, Button,
 } from './style';
-import { modalStore } from '../../store/store';
+import { inputCnstStore, inputCstStore, modalStore } from '../../store/store';
 import { InputFields } from './InputFields/InputFields';
 import closeButton from '../../assets/close.png';
 
 export function Modal() {
   const { closeModal } = modalStore();
+  const { setInputCnst } = inputCnstStore();
+  const { setInputCst } = inputCstStore();
+
+  useEffect(() => {
+    console.log('Modal 컴포넌트 실행');
+    return () => {
+      setInputCnst('');
+      setInputCst('');
+      console.log('Modal 컴포넌트 종료');
+    };
+  }, []);
 
   return (
     <>

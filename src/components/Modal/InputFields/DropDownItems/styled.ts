@@ -6,21 +6,26 @@ export const DropDownItemsWrapper = styled.div`
 `;
 
 export const ItemsWrapper = styled.div`
-  ${tw`absolute bg-gray-50 w-full rounded-lg`}
+  ${tw`absolute bg-gray-50 w-full rounded-lg z-10 bg-white rounded shadow`}
 `;
 
-export const Item = styled.div`
+export const Items = styled.ul`
   & {
-    ${tw`py-2 px-3 flex space-x-44 place-content-center`}
-    ${tw`hover:bg-gray-100`}
-    ${tw`active:bg-gray-200`}
+    ${tw`overflow-y-auto py-1 h-48 text-gray-700`}
   }
 
-  & #name {
-    ${tw`flex-1 p-1 rounded-full bg-yellow-300 text-sm text-gray-50 text-center`}
+  & button {
+    ${tw`flex items-center py-2 px-4 w-full
+    hover:bg-gray-100`}
   }
 
-  & #position {
-    ${tw`flex-1 p-1 text-sm text-gray-400 text-center`}
+  & img {
+    ${tw`mr-2 w-6 h-6 rounded-full`}
+  }
+`;
+
+export const NullMessage = styled.div`
+  &{
+    ${tw`text-gray-700 text-sm`}
   }
 `;
