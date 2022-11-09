@@ -6,10 +6,9 @@ export function Main() {
   const { isOpenModal, openModal } = modalStore();
 
   return (
-    <div>
+    <main>
       {isOpenModal && <Modal />}
-      <h1>Main</h1>
       <button type="button" onClick={openModal}>등록(모달창)</button>
-    </div>
+    </main>
   );
 }

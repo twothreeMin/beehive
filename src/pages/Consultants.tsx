@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Consultant } from '../../state/server/type/type';
-import { RequestManager } from '../../lib/requestApi';
-import { Card } from '../Card/Card';
+import { Consultant } from '../state/server/type/type';
+import { RequestManager } from '../lib/requestApi';
+import { Card } from '../components/Card/Card';
 
 export function Consultants() {
   const [consultants, setConsultants] = useState<Consultant[]>([]);
