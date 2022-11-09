@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Customer } from '../../interface/interface';
+import { Customer } from '../../state/server/type/type';
 import { RequestManager } from '../../lib/requestApi';
 import { Card } from '../Card/Card';
 

@@ -1,4 +1,4 @@
-import { Consultant, Customer } from '../../interface/interface';
+import { Consultant, Customer } from '../../state/server/type/type';
 import {
   CardContainer, CardWrapper, CardLogo, CardCustomerName, CardTerm,
 } from './style';

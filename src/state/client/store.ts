@@ -1,7 +1,7 @@
 import create from 'zustand';
 import {
   ModalState, InputCstState, InputCnstState,
-} from '../interface/stateInterface';
+} from './type/type';
 
 const modalStore = create<ModalState>((set) => ({
   isOpenModal: false,

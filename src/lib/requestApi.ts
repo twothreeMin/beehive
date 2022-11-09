@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { BASEURL } from './requestUrl';
-import { Consultant, Customer } from '../interface/interface';
+import { Consultant, Customer } from '../state/server/type/type';
 
 const axiosClient = axios.create({
   baseURL: BASEURL,

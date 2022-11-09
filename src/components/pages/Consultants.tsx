@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Consultant } from '../../interface/interface';
+import { Consultant } from '../../state/server/type/type';
 import { RequestManager } from '../../lib/requestApi';
 import { Card } from '../Card/Card';
 

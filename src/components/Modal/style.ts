@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import tw from 'twin.macro';
-import { ButtonTypeProps } from '../../interface/styledInterface';
+import { ButtonTypeProps } from '../../state/client/type/styletype';
 
 export const InputWrapper = styled.div`
   & label {

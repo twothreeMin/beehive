@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import {
   ModalWrapper, ModalFormWrapper, ButtonWrapper, Button,
 } from './style';
-import { inputCnstStore, inputCstStore, modalStore } from '../../store/store';
+import { modalStore } from '../../state/client/store';
 import { InputFields } from './InputFields/InputFields';
 import closeButton from '../../assets/close.png';
 

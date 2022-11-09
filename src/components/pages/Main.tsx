@@ -1,4 +1,4 @@
-import { modalStore } from '../../store/store';
+import { modalStore } from '../../state/client/store';
 import { Modal } from '../Modal/Modal';
 
 export function Main() {

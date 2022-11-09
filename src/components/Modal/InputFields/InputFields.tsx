@@ -1,9 +1,10 @@
 import React, { useCallback } from 'react';
-import { inputCstStore, inputCnstStore } from '../../../store/store';
+import { inputCstStore, inputCnstStore } from '../../../state/client/store';
 import { debounce } from '../utils';
 import { DropDownItems } from './DropDownItems/DropDownItems';
 import { InputWrapper } from './style';
 
+// 고객사 InputField
 const CstInputField = React.memo(() => {
   const { inputCst, setInputCst } = inputCstStore();
 
@@ -22,6 +23,7 @@ const CstInputField = React.memo(() => {
   );
 });
 
+// 컨설턴트 InputField
 const CnstInputField = React.memo(() => {
   const { inputCnst, setInputCnst } = inputCnstStore();
 
