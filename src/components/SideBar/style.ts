@@ -28,7 +28,7 @@ export const SideBarContent = styled.div`
     ${tw`flex flex-col`}
   }
 
-  & #menu-title {
+  & li#menu-title {
     ${tw`font-medium text-lg text-yellow-700 px-4 my-2`}
   }
 

@@ -1,12 +1,21 @@
 import { modalStore } from '../../state/client/store';
 import { Modal } from '../Modal/Modal';
+import { Profile } from './Profile/Profile';
+import { SearchBar } from './SearchBar/SearchBar';
+import { MainHeaderContent, MainHeader } from './style';
 
+// 버튼은 나중에 스케줄러 안으로 넣어야함
 export function Main() {
-  // openModal 상태는 SideMenu 생기면 따로 MainPage 컴포넌트 만들어서 빠질 예정
   const { isOpenModal, openModal } = modalStore();
 
   return (
-    <main>
+    <main className="w-full">
+      <MainHeader>
+        <MainHeaderContent>
+          <SearchBar />
+          <Profile />
+        </MainHeaderContent>
+      </MainHeader>
       {isOpenModal && <Modal />}
       <button type="button" onClick={openModal}>등록(모달창)</button>
     </main>
