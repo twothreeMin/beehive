@@ -12,3 +12,9 @@ export const MainHeaderContent = styled.div`
     ${tw`flex items-center flex-row`}
   }
 `;
+
+export const MainContent = styled.div`
+  & {
+    ${tw`mt-7`}
+  }
+`;
