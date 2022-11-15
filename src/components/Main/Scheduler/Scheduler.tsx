@@ -1,24 +1,47 @@
 import { DayPilotScheduler } from 'daypilot-pro-react';
+import { inputCnstStore } from '../../../state/client/store';
+import { useConsultants } from '../../../state/server/useGetData';
 
 export function Scheduler() {
+  const { inputCnst } = inputCnstStore();
+  const cnsts = useConsultants(inputCnst);
   return (
     <DayPilotScheduler
       startDate="2022-11-01"
-      days={30}
+      days={365}
       scale="Day"
       timeHeaders={[
         { groupBy: 'Month' },
         { groupBy: 'Day', format: 'd' },
       ]}
-      resources={[
-        { name: '이상민', id: 'A' },
-        { name: '지경배', id: 'B' },
-        { name: '이덕규', id: 'C' },
-        { name: '김지수', id: 'D' },
-      ]}
+      resources={cnsts}
       events={[
         {
-          id: 1, text: 'Event 1', start: '2022-11-07', end: '2022-12-31', resource: 'A',
+          id: 'p1',
+          text: '(주)설닢',
+          start: '2022-11-07',
+          end: '2022-12-31',
+          resource: 'cnst1',
+          backColor: '#adf',
+          barHidden: true,
+        },
+        {
+          id: 'p2',
+          text: 'metlife',
+          start: '2022-10-23',
+          end: '2022-11-21',
+          resource: 'cnst2',
+          backColor: '#abd',
+          barHidden: true,
+        },
+        {
+          id: 'p3',
+          text: '한국과학기술연구원',
+          start: '2022-10-06',
+          end: '2022-11-31',
+          resource: 'cnst3',
+          backColor: '#adc',
+          barHidden: true,
         },
       ]}
       onEventClick={(args) => console.log(args.e.data)}
