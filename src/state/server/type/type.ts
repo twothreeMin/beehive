@@ -1,8 +1,11 @@
 export interface Project {
-  end_date: string;
-  name: string;
-  ptst_target: number;
-  start_date: string;
+  id: string;
+  text: string;
+  start: string;
+  end: string;
+  resource: string;
+  backColor: string;
+  barHidden: boolean;
 }
 
 export interface Consultant {

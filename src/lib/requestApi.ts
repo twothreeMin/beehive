@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { BASEURL } from './requestUrl';
-import { Consultant, Customer } from '../state/server/type/type';
+import { Consultant, Customer, Project } from '../state/server/type/type';
 
 const axiosClient = axios.create({
   baseURL: BASEURL,
@@ -32,7 +32,22 @@ const getConsultants = async () => {
   return resultData;
 };
 
+const getProject = async () => {
+  const resp = await axiosClient.get('project.json');
+  const resultData: Project[] = Object.keys(resp.data).map((key: string) => ({
+    id: key,
+    text: resp.data[key].text,
+    start: resp.data[key].start,
+    end: resp.data[key].end,
+    resource: resp.data[key].resource,
+    backColor: resp.data[key].backColor,
+    barHidden: true,
+  }));
+  return resultData;
+};
+
 export const RequestManager = {
   getConsultants,
   getCustomers,
+  getProject,
 };

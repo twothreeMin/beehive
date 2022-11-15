@@ -15,3 +15,8 @@ export function useConsultants(word = '') {
   });
   return data;
 }
+
+export function useProject() {
+  const { data = [] } = useQuery(queryKeys.project, RequestManager.getProject);
+  return data;
+}

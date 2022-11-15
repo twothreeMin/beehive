@@ -2,10 +2,9 @@ import React from 'react';
 import { useCustomers, useConsultants } from '../../../../state/server/useGetData';
 import {
   DropDownItemsWrapper, ItemsWrapper, Items, NullMessage,
-} from './styled';
+} from './style';
 import userProfile from '../../../../assets/userProfile.png';
 import { inputCstStore, inputCnstStore } from '../../../../state/client/store';
-import { RequestData } from './proptype';
 
 function DropDownCst() {
   const { inputCst, setInputCst } = inputCstStore();
@@ -59,9 +58,10 @@ function DropDownCnst() {
   );
 }
 
-export const DropDownItems = React.memo(({ requestData }: RequestData) => (
-  <DropDownItemsWrapper>
-    {requestData === 'customer'
-      ? <DropDownCst /> : <DropDownCnst />}
-  </DropDownItemsWrapper>
+export const DropDownItems = React.memo(({ requestData }:
+  {requestData : string}) => (
+    <DropDownItemsWrapper>
+      {requestData === 'customer'
+        ? <DropDownCst /> : <DropDownCnst />}
+    </DropDownItemsWrapper>
 ));
