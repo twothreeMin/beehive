@@ -1,10 +1,10 @@
 import { DayPilotScheduler } from 'daypilot-pro-react';
-import { inputCnstStore } from '../../../state/client/store';
+import { searchCnstStore } from '../../../state/client/store';
 import { useConsultants, useProject } from '../../../state/server/useGetData';
 
 export function Scheduler() {
-  const { inputCnst } = inputCnstStore();
-  const cnsts = useConsultants(inputCnst);
+  const { searchCnst } = searchCnstStore();
+  const cnsts = useConsultants(searchCnst);
   const project = useProject();
 
   return (

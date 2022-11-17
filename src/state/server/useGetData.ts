@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query';
-import { RequestManager } from '../../lib/requestApi';
+import { RequestManager } from './lib/requestApi';
 import { queryKeys } from './constants';
 
 export function useCustomers(word = '') {

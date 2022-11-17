@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Customer } from '../state/server/type/type';
-import { RequestManager } from '../lib/requestApi';
+import { RequestManager } from '../state/server/lib/requestApi';
 import { Card } from '../components/Card/Card';
 
 export function Customers() {

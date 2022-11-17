@@ -1,14 +1,14 @@
 import { useCallback } from 'react';
-import { inputCnstStore } from '../../../state/client/store';
+import { searchCnstStore } from '../../../state/client/store';
 import { debounce } from '../../Modal/utils';
 import { SearchBarWrapper } from './style';
 
 export function SearchBar() {
-  const { inputCnst, setInputCnst } = inputCnstStore();
+  const { searchCnst, setSearchCnst } = searchCnstStore();
 
   const onChageInput = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    debounce(setInputCnst(e.target.value), 500);
-  }, [inputCnst]);
+    debounce(setSearchCnst(e.target.value), 500);
+  }, [searchCnst]);
 
   return (
     <form>

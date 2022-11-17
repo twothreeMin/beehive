@@ -1,6 +1,6 @@
 import create from 'zustand';
 import {
-  ModalState, InputCstState, InputCnstState,
+  ModalState, InputCstState, InputCnstState, SearchCnstState,
 } from './type/type';
 
 const modalStore = create<ModalState>((set) => ({
@@ -19,6 +19,11 @@ const inputCnstStore = create<InputCnstState>((set) => ({
   setInputCnst: (word) => set(() => ({ inputCnst: word })),
 }));
 
+const searchCnstStore = create<SearchCnstState>((set) => ({
+  searchCnst: '',
+  setSearchCnst: (word) => set(() => ({ searchCnst: word })),
+}));
+
 export {
-  modalStore, inputCstStore, inputCnstStore,
+  modalStore, inputCstStore, inputCnstStore, searchCnstStore,
 };

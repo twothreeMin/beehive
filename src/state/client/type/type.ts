@@ -13,3 +13,8 @@ export interface InputCnstState {
   inputCnst: string;
   setInputCnst: (word: string) => void;
 }
+
+export interface SearchCnstState {
+  searchCnst: string;
+  setSearchCnst: (word: string) => void;
+}
