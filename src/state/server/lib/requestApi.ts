@@ -46,8 +46,15 @@ const getProject = async () => {
   return resultData;
 };
 
+const addConsultant = async (consultant: Consultant) => {
+  const response = await axiosClient.post('consultants.json', consultant);
+  console.log(response);
+  return response;
+};
+
 export const RequestManager = {
   getConsultants,
   getCustomers,
   getProject,
+  addConsultant,
 };

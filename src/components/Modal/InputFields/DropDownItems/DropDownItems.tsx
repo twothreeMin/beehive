@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCustomers, useConsultants } from '../../../../state/server/useGetData';
+import { useGetCustomers, useGetConsultants } from '../../../../state/server/useGetData';
 import {
   DropDownItemsWrapper, ItemsWrapper, Items, NullMessage,
 } from './style';
@@ -8,7 +8,7 @@ import { inputCstStore, inputCnstStore } from '../../../../state/client/store';
 
 function DropDownCst() {
   const { inputCst, setInputCst } = inputCstStore();
-  const csts = useCustomers(inputCst);
+  const csts = useGetCustomers(inputCst);
 
   function clickCstItem() {
     setInputCst('');
@@ -34,7 +34,7 @@ function DropDownCst() {
 
 function DropDownCnst() {
   const { inputCnst, setInputCnst } = inputCnstStore();
-  const cnsts = useConsultants(inputCnst);
+  const cnsts = useGetConsultants(inputCnst);
 
   function clickCnstItem() {
     setInputCnst('');
