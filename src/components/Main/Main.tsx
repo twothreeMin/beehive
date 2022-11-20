@@ -5,8 +5,8 @@ import { Scheduler } from './Scheduler/Scheduler';
 import { SearchBar } from './SearchBar/SearchBar';
 import { MainHeaderContent, MainHeader, MainContent } from './style';
 
-// 버튼은 나중에 스케줄러 안으로 넣어야함
-export function Main() {
+// 메인은 콘텐츠 자리이며 customer, consultant, mainhome에 따라 안의 내용이 달라질것.
+function MainHome() {
   const { isOpenModal, openModal } = modalStore();
 
   return (
@@ -24,4 +24,8 @@ export function Main() {
       <button type="button" onClick={openModal}>등록(모달창)</button>
     </main>
   );
+}
+
+export function Main({ pageName }: {pageName: string}) {
+  return <MainHome />;
 }

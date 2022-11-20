@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Consultants } from './pages/Consultants';
 import { Customers } from './pages/Customers';
-import { Home } from './pages/Home/Home';
+import { Home } from './pages/Home';
 
 export function App() {
   return (
