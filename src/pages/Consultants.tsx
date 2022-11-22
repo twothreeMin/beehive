@@ -1,34 +1,26 @@
-import { Main } from '../components/Main/Main';
+import { CnstCardList } from '../components/Card/CnstCardList/CnstCardList';
+import { Profile } from '../components/Main/Profile/Profile';
+import { SearchBar } from '../components/Main/SearchBar/SearchBar';
 import { SideBar } from '../components/SideBar/SideBar';
-import { MainWrapper } from './style';
+import {
+  MainContent, MainHeader, MainHeaderContent, MainWrapper,
+} from './style';
 
 export function Consultants() {
   return (
     <MainWrapper>
       <SideBar />
-      <Main pageName="Home" />
+      <main className="w-full">
+        <MainHeader>
+          <MainHeaderContent>
+            <SearchBar />
+            <Profile />
+          </MainHeaderContent>
+        </MainHeader>
+        <MainContent>
+          <CnstCardList />
+        </MainContent>
+      </main>
     </MainWrapper>
   );
 }
-
-// export function Consultants() {
-//   const [consultants, setConsultants] = useState<Consultant[]>([]);
-
-//   useEffect(() => {
-//     async function getConsultants() {
-//       const consultantsArr = await RequestManager.getConsultants();
-//       setConsultants(consultantsArr);
-//     }
-//     getConsultants();
-//   }, []);
-
-//   return (
-//     <div>
-//       {consultants.map((consultant) => (
-//         <div key={consultant.id}>
-//           <Card data={consultant} />
-//         </div>
-//       ))}
-//     </div>
-//   );
-// }
