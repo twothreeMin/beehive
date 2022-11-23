@@ -5,7 +5,7 @@ export function CnstCardList() {
   const cnsts = useGetConsultants();
 
   return (
-    <div className="flex flex-col md:flex-row ">
+    <div className="flex flex-wrap flex-col md:flex-row ">
       {cnsts.map((cnst) => (
         <div key={cnst.id}>
           <CnstCard cnst={cnst} />
